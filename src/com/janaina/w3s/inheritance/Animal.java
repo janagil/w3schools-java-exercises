@@ -1,23 +1,29 @@
 package com.janaina.w3s.inheritance;
 
-public class Animal { // create a superclass (parent)
-    protected String type = "cat"; // Animal attribute
-    public void meow() { // Animal method
-        System.out.println("Meooww!!");
+public class Animal {
+    public void animalSound() {
+        System.out.println("This animal makes a sound!");
     }
 }
 
-class Cat extends Animal { // create a subclass (child)
-    private String catColor = "white"; // Cat attribute
+class Pig extends Animal {
+    public void animalSound(){
+        System.out.println("The pig says: oink oink");
+    }
+}
+ class Cat extends Animal {
+    public void animalSound(){
+        System.out.println("The cat says: meow meow");
+    }
+ }
 
+class Main {
     public static void main(String[] args) {
-        // create a myCat object
-        Cat myCat = new Cat();
-
-        // call the meow() method from the animal class on the myCat object
-        myCat.meow();
-
-        // display the value of the type attribute (from the Animal class) and the value of the catColor from the Cat class
-        System.out.println("Said the " + myCat.catColor + " " + myCat.type);
+        Animal myAnimal = new Animal();
+        Animal myPig = new Pig();
+        Animal myCat = new Cat();
+        myAnimal.animalSound();
+        myPig.animalSound();
+        myCat.animalSound();
     }
 }
